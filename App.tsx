@@ -81,11 +81,20 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   gameCard: {
+    flexDirection: 'row',
     padding: 10,
     marginVertical: 5,
     backgroundColor: '#fff',
     borderRadius: 5,
     elevation: 3,
+  },
+  gameImage: {
+    width: 100,
+    height: 100,
+    marginRight: 10,
+  },
+  gameDetails: {
+    flex: 1,
   },
   gameTitle: {
     fontSize: 18,
