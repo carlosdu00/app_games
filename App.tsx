@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, FlatList } from 'react-native';
 import games from './src/data/games';
+import Footer from './src/components/Footer';
 
 export default function App() {
   const [searchText, setSearchText] = useState('');
@@ -41,10 +42,7 @@ export default function App() {
           </View>
         )}
       />
-    {/* Footer */}
-    <View style={styles.footer}>
-        <Text>09/2024</Text>
-      </View>
+      <Footer/>
     </View>
   );
 }
