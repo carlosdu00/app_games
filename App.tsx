@@ -34,7 +34,7 @@ export default function App() {
 
       {/* Game list*/}
       <FlatList
-        data={filteredGames}
+        data={filteredGames.sort((a, b) => a.name.localeCompare(b.name))}
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.gameCard}>
