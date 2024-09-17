@@ -42,7 +42,7 @@ export default function App() {
           </View>
         )}
       />
-      <Footer/>
+      <Footer />
     </View>
   );
 }
