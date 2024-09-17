@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, FlatList } from 'react-native';
+import { View, Text, TextInput, StyleSheet, FlatList, Image } from 'react-native';
 import games from './src/data/games';
 import Footer from './src/components/Footer';
 
@@ -38,7 +38,15 @@ export default function App() {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <View style={styles.gameCard}>
-            <Text style={styles.gameTitle}>{item.name}</Text>
+            <Image source={{ uri: item.image }} style={styles.gameImage} />
+            <View style={styles.gameDetails}>
+              <Text style={styles.gameTitle}>{item.name}</Text>
+              <Text>Platform: {item.platform}</Text>
+              <Text>Genre: {item.genre}</Text>
+              <Text>Developer: {item.developer}</Text>
+              <Text>Rating: {item.rating} (Score: {item.ratingScore})</Text>
+              <Text>Release Date: {item.releaseDate}</Text>
+            </View>
           </View>
         )}
       />
@@ -82,11 +90,5 @@ const styles = StyleSheet.create({
   gameTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-  },
-  footer: {
-    padding: 10,
-    borderTopWidth: 1,
-    borderTopColor: '#ccc',
-    alignItems: 'center',
   },
 });
