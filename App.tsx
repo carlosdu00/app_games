@@ -31,7 +31,7 @@ export default function App() {
         />
       </View>
 
-      {/* Game list (corpo da página) */}
+      {/* Game list*/}
       <FlatList
         data={filteredGames}
         keyExtractor={(item) => item.id.toString()}
@@ -41,6 +41,10 @@ export default function App() {
           </View>
         )}
       />
+    {/* Footer */}
+    <View style={styles.footer}>
+        <Text>09/2024</Text>
+      </View>
     </View>
   );
 }
@@ -80,5 +84,11 @@ const styles = StyleSheet.create({
   gameTitle: {
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  footer: {
+    padding: 10,
+    borderTopWidth: 1,
+    borderTopColor: '#ccc',
+    alignItems: 'center',
   },
 });
